@@ -1,0 +1,25 @@
+dist:
+  name: otelcol-dev
+  description: Custom OTel Collector distribution for Developers
+  output_path: ./otelcol-dev
+  module: github.com/inconscient/zabbix-otel-collector
+  version: 0.0.2
+
+exporters:
+  - gomod: go.opentelemetry.io/collector/exporter/debugexporter v0.137.0
+  - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/exporter/clickhouseexporter v0.137.0
+
+processors:
+  - gomod: go.opentelemetry.io/collector/processor/batchprocessor v0.137.0
+  - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/processor/resourceprocessor v0.137.0
+receivers:
+  - gomod: go.opentelemetry.io/collector/receiver/otlpreceiver v0.137.0
+  - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/receiver/syslogreceiver v0.137.0
+  - gomod: github.com/inconscient/zabbixreceiver v0.1.6
+
+providers:
+  - gomod: go.opentelemetry.io/collector/confmap/provider/envprovider v1.43.0
+  - gomod: go.opentelemetry.io/collector/confmap/provider/fileprovider v1.43.0
+  - gomod: go.opentelemetry.io/collector/confmap/provider/httpprovider v1.43.0
+  - gomod: go.opentelemetry.io/collector/confmap/provider/httpsprovider v1.43.0
+  - gomod: go.opentelemetry.io/collector/confmap/provider/yamlprovider v1.43.0
