@@ -33,3 +33,4 @@ go.work.sum
 
 # Nested project folder
 otelcol-dev/zabbixreceiver/
+
