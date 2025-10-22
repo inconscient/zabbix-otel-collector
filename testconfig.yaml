@@ -1,0 +1,19 @@
+receivers:
+  zabbixreceiver:
+    endpoint: 0.0.0.0:54319
+processors:
+  batch:
+
+exporters:
+  debug:
+    verbosity: detailed
+
+service:
+  pipelines:
+    metrics:
+      receivers: [zabbixreceiver]
+      processors: [batch]
+      exporters: [debug]
+  telemetry:
+    logs:
+      level: debug
